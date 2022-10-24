@@ -3,9 +3,11 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser,updateUserProfile } = useContext(AuthContext)
     
     const handleSubmit=(e)=>{
         e.preventDefault()
@@ -14,7 +16,21 @@ const Register = () => {
         const photoURL=form.photoURL.value; 
         const email=form.email.value; 
         const password=form.password.value;
-        
+        createUser(email,password)
+        .then(result=>{
+            const user=result.user 
+            console.log(user);
+            form.reset();
+            handleUpdateProfile(name,photoURL)
+            toast.success("Registration successfull")
+        })
+        .catch(error=>toast.error(error.message))
+    }
+
+    const handleUpdateProfile=(name,photoURL)=>{
+        updateUserProfile(name,photoURL)
+        .then(()=>{})
+        .catch(error=>console.error(error.message))
     }
     return (
         <Form onSubmit={handleSubmit} className=" w-50 mt-5 shadow p-3 rounded mx-auto">
@@ -24,7 +40,7 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" name='email' placeholder="Enter email" />
+                <Form.Control type="email" name='email' placeholder="Enter email" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPhotoURL">
                 <Form.Label>Photo Url</Form.Label>
@@ -33,12 +49,13 @@ const Register = () => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" name='password' placeholder="Password" />
+                <Form.Control type="password" name='password' placeholder="Password" required/>
             </Form.Group>
            
             <Button variant="primary" type="submit">
                 Register
             </Button>
+            <Link className='ms-3' to="/login">Already have an account? Please login</Link>
         </Form>
     );
 };
