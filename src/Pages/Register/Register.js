@@ -14,10 +14,11 @@ const Register = () => {
         const photoURL=form.photoURL.value; 
         const email=form.email.value; 
         const password=form.password.value;
+        
     }
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form onSubmit={handleSubmit} className=" w-50 mt-5 shadow p-3 rounded mx-auto">
+            <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control type="text" name='name' placeholder="Enter name" />
             </Form.Group>
@@ -25,7 +26,7 @@ const Register = () => {
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" name='email' placeholder="Enter email" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicPhotoURL">
                 <Form.Label>Photo Url</Form.Label>
             <Form.Control type="text" name='photoURL' placeholder="Enter Photo Url" />
             </Form.Group>
