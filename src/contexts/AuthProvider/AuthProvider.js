@@ -25,11 +25,12 @@ const AuthProvider = ({ children }) => {
     })
    }
     
-    //  sigin by google
-    const googleSignIn=(googleProvider)=>{
+    //  sigin by google and github
+    const googleAndGithubSignIn=(googleProvider)=>{
        return signInWithPopup(auth, googleProvider)
 
     }
+
 
     // state observer and getting user data
     useEffect(()=>{
@@ -43,7 +44,7 @@ const AuthProvider = ({ children }) => {
         createUser,
         signIn,
         updateUserProfile,
-        googleSignIn
+        googleAndGithubSignIn
 
     }
     return (

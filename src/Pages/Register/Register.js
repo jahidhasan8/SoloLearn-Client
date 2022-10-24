@@ -5,12 +5,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { GoogleAuthProvider } from "firebase/auth";
-import { FaGoogle } from "react-icons/fa";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext)
+    const { createUser, updateUserProfile, googleAndGithubSignIn } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -38,14 +39,25 @@ const Register = () => {
 
     const handleGoogleSignIn = (e) => {
         e.preventDefault()
-        googleSignIn(googleProvider)
+        googleAndGithubSignIn(googleProvider)
             .then(result => {
                 const user = result.user
                 console.log(user);
-                toast.success("google signIn Successfull")
+                toast.success("Google signIn Successfull")
             })
             .catch(error => toast.error(error.message))
     }
+    const handleGithubSignIn = (e) => {
+        e.preventDefault()
+        googleAndGithubSignIn(githubProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                toast.success("Github signIn Successfull")
+            })
+            .catch(error => toast.error(error.message))
+    }
+
     return (
         <Form onSubmit={handleSubmit} className=" w-50 mt-5 shadow p-3 rounded mx-auto">
             <Form.Group className="mb-3" controlId="formBasicName">
@@ -70,8 +82,10 @@ const Register = () => {
                 Register
             </Button>
             <Button onClick={handleGoogleSignIn} className='ms-3' variant="outline-primary"><FaGoogle></FaGoogle> Google SignIn</Button>
+            <Button onClick={handleGithubSignIn} className='ms-3' variant="outline-primary"><FaGithub></FaGithub> Github SignIn</Button>
+            <br /> <br />
 
-            <Link className='ms-3' to="/login">Already have an account? Please login</Link>
+            <Link className='ms-3 ' to="/login">Already have an account? Please login</Link>
         </Form>
     );
 };
