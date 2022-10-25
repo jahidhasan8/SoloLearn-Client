@@ -5,14 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+
 
 const Register = () => {
-    const { createUser, updateUserProfile, googleAndGithubSignIn } = useContext(AuthContext)
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
-
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -37,26 +34,8 @@ const Register = () => {
             .catch(error => console.error(error.message))
     }
 
-    const handleGoogleSignIn = (e) => {
-        e.preventDefault()
-        googleAndGithubSignIn(googleProvider)
-            .then(result => {
-                const user = result.user
-                console.log(user);
-                toast.success("Google signIn Successfull")
-            })
-            .catch(error => toast.error(error.message))
-    }
-    const handleGithubSignIn = (e) => {
-        e.preventDefault()
-        googleAndGithubSignIn(githubProvider)
-            .then(result => {
-                const user = result.user
-                console.log(user);
-                toast.success("Github signIn Successfull")
-            })
-            .catch(error => toast.error(error.message))
-    }
+   
+   
 
     return (
         <Form onSubmit={handleSubmit} className=" w-50 mt-5 shadow p-3 rounded mx-auto">
@@ -81,9 +60,7 @@ const Register = () => {
             <Button variant="primary" type="submit">
                 Register
             </Button>
-            <Button onClick={handleGoogleSignIn} className='ms-3' variant="outline-primary"><FaGoogle></FaGoogle> Google SignIn</Button>
-            <Button onClick={handleGithubSignIn} className='ms-3' variant="outline-primary"><FaGithub></FaGithub> Github SignIn</Button>
-            <br /> <br />
+           
 
             <Link className='ms-3 ' to="/login">Already have an account? Please login</Link>
         </Form>
