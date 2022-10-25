@@ -20,9 +20,12 @@ const Login = () => {
         .then(result=>{
             const user=result.user 
             console.log(user);
+            form.reset()
         })
         .catch(error=>toast.error(error.message))
     }
+
+   
     return (
         <Form onSubmit={handleSubmit} className=" w-50 mt-5 shadow p-3 rounded mx-auto">
        

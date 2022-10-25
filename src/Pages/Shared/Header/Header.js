@@ -6,11 +6,29 @@ import { SiSololearn } from "react-icons/si";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Image from 'react-bootstrap/Image'
-import Tooltip from 'react-bootstrap/Tooltip';
+import { Button } from 'react-bootstrap';
+import { useState } from 'react';
+
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user,logOut } = useContext(AuthContext)
+    const[toggle,setToggle]=useState('dark')
+
+    const handleToggle=()=>{
+        if(toggle==='dark'){
+            setToggle('light')
+        }
+        else {
+            setToggle('dark')
+        }
+    }
+
+    const handleLogout=()=>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>console.error(error.message))
+    }
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -27,11 +45,18 @@ const Header = () => {
                     <Nav>
                         {
                             user?.uid ?
-                                <Image className='mt-2' style={{ height: '30px' }} roundedCircle src={user?.photoURL} title={user?.displayName}></Image>
+                                <>
+                                    <Nav.Link className='me-2' onClick={handleLogout}>Logout</Nav.Link>
+                                    <Image className='mt-2' style={{ height: '30px' }} roundedCircle src={user?.photoURL} title={user?.displayName}></Image>
+                                </>
                                 :
                                 <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
 
                         }
+                        
+                         {/* toggle button */}
+                        <Button onClick={handleToggle} className='ms-3' variant="outline-info">{toggle}</Button>
+
 
                     </Nav>
                 </Navbar.Collapse>
