@@ -13,7 +13,7 @@ const CourseDetail = () => {
 
     const { name, id, description, image, published_date, total_view } = courses
 
-    
+
     return (
         <div className='p-5'>
             <Card className='  mx-auto mt-5 rounded mb-5 col-md-6 shadow'>
@@ -21,16 +21,18 @@ const CourseDetail = () => {
                 <Card.Title className='text-center fw-bold bg-dark text-light m-0 rounded py-2 mx-2'>Welcome to {name} Course  <Pdf targetRef={ref} filename="p-Course.pdf">
                     {({ toPdf }) => <button onClick={toPdf}><FaDownload></FaDownload></button>}
                 </Pdf>
-                    </Card.Title>
+                </Card.Title>
 
-                <Card.Img style={{ height: "300px" }} className='px-2 w-full rounded' variant="top" src={image} />
-                <Card.Body>
+                <div  ref={ref}>
+                    <Card.Img style={{ height: "300px" }} className='px-2 w-full rounded' variant="top" src={image} />
+                    <Card.Body>
 
-                    <Card.Text className='mt-4 px-3 ' ref={ref} >
-                       {description}
-                    </Card.Text>
+                        <Card.Text className='mt-4 px-3 ' >
+                            {description}
+                        </Card.Text>
 
-                </Card.Body>
+                    </Card.Body>
+                </div>
                 <Button className='px-0 fw-bold' variant="outline-dark"><Link to={`/checkout/${id}`}>Get Premium Access</Link></Button>
 
             </Card>
