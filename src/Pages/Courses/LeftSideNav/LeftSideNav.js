@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 const LeftSideNav = () => {
     const [courses, setCourses] = useState([])
+
+    // load api data through useEffect hook
     useEffect(() => {
         fetch('https://assignment10-server-kohl.vercel.app/courses/')
             .then(res => res.json())
@@ -17,7 +19,7 @@ const LeftSideNav = () => {
 
                 >
                     <Link className='fw-bold text-decoration-none' to={`/courseDetails/${course.id}`}>{course.name}</Link>
-                    {/* to={`/category/${category.id}`} */}
+                
                 </p>)
             }
         </div>

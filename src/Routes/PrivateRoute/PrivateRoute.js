@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     //    private route 
-
+    // loader
     if (loading) {
         return <div className="d-flex justify-content-center">
             <Spinner animation="border m-5" variant="info" />

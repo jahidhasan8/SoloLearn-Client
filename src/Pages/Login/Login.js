@@ -10,9 +10,10 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     const { signIn,googleAndGithubSignIn,setLoading } = useContext(AuthContext);
+
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
-    const navigate=useNavigate()
+    const navigate=useNavigate();
     const location=useLocation();
     const from=location.state?.from?.pathname || '/'
 

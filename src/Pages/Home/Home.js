@@ -6,6 +6,7 @@ const Home = () => {
         <div className='w-full p-1 mb-0'>
             <h2 className='fw-bold text-center'>Welcome to SoloLearn family</h2>
             <p className='text-center fw-semibold'>Here you can grow your skills on programming languages <br />We are proving some programming language courses</p>
+            
             <Carousel className='mt-2 '>
                 <Carousel.Item className=''>
                     <img style={{ height: "500px" }}

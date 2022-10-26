@@ -11,30 +11,35 @@ const Faq = () => {
                     We are working through it.Our team working to update all course.We are making new course material also working on existing course. We will update soon in our site.Keep learning...
                 </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="2">
                 <Accordion.Header>Can i download course?</Accordion.Header>
                 <Accordion.Body>
                     Yes,you can download our course.When you explore our course details, On course details,if you click on premium access you will redirect to checkout page.From checkout page you will get download option.
                 </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="3">
                 <Accordion.Header>Can we get non-cse courses?</Accordion.Header>
                 <Accordion.Body>
                     Sorry, right now we are working with programming language courses.In future if we include any non-cse courses we will update on our site.
                 </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="4">
                 <Accordion.Header>Does this site supported on mobile device?</Accordion.Header>
                 <Accordion.Body>
                     Yes,This site supported on mobile device.You can use this site on larger device also on mobile device.
                 </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="5">
                 <Accordion.Header>Can i read courses without register?</Accordion.Header>
                 <Accordion.Body>
                     Yes,you can read our courses without register.But you can't download courses, if you haven't register on our site.
                 </Accordion.Body>
             </Accordion.Item>
+            
             <Accordion.Item eventKey="6">
                 <Accordion.Header>What are the technology requirements?</Accordion.Header>
                 <Accordion.Body>
