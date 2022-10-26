@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCLTokqa0B5pd_Y34OytcJ3PZwdA0qpgJI",
-  authDomain: "sololearn-ccd33.firebaseapp.com",
-  projectId: "sololearn-ccd33",
-  storageBucket: "sololearn-ccd33.appspot.com",
-  messagingSenderId: "310153979294",
-  appId: "1:310153979294:web:dece7aed1d70fb8c23628f"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

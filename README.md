@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# SoloLearn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SoloLearn is Programming Course related site.Where you can get programming online courses.You can easily learn from this site and grow your skills on programming languages.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## About This Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In this project i have made a site that shows us programming language courses.You can choose any course from this site and can learn programming language.You can read courses through online also if you want you can download our courses as pdf file.For downloading courses at first you need to register our site and login.After successfully login from course details page you can download pdf file.   
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##Technologies Used for Building the site
 
-### `npm test`
+### `React JS `
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Full Project is Based on ReactJS. We have used many components to Build the site.
 
-### `npm run build`
+### `React Router Dom`
+I have used react router dom
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Bootstrap ,React-bootstrap`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I have Used BootStrap and React-Bootstrap to design our site .
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Vercel`
+I have Used Vercel to Host Server Site .
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Firebase`
+Full Project is Based on Firebase. We have used Google and Github and Email-Password Authentication..
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `React Icons`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+React Icons have been used to design.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `React-Hot-Toast`
+I have used react hot toast for show error and successful toast messages
 
-## Learn More
+### `React-to-pdf`
+I have used react-to-pdf to generate pdf file
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `HTML & CSS`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+HTML & CSS is a core part for building a site. I have also used HTML & CSS.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `FIREBASE LIVE SITE LINK`
+[LiveSite]() --click to view Live Site

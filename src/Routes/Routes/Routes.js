@@ -16,7 +16,7 @@ export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -25,7 +25,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch(`http://localhost:5000/courses/`)
+                loader: () => fetch(`https://assignment10-server-kohl.vercel.app/courses/`)
 
             },
             {
@@ -47,12 +47,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/courseDetails/:id',
                 element: <CourseDetail></CourseDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment10-server-kohl.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment10-server-kohl.vercel.app/courses/${params.id}`)
             }
 
         ]

@@ -24,10 +24,10 @@ const CourseDetail = () => {
                 </Card.Title>
 
                 <div  ref={ref}>
-                    <Card.Img style={{ height: "300px" }} className='px-2 w-full rounded' variant="top" src={image} />
+                    <Card.Img  className='px-5 center-block mt-2 w-100  rounded' variant="top" src={image} />
                     <Card.Body>
 
-                        <Card.Text className='mt-4 px-3 ' >
+                        <Card.Text className='mt-4 px-3 text-justify' >
                             {description}
                         </Card.Text>
 
@@ -35,7 +35,7 @@ const CourseDetail = () => {
                 </div>
                <div className='d-flex justify-content-between px-4'>
                 <p className='fw-bold'> Price: {price}$</p>
-               <Button className='px-0 fw-bold' variant="outline-dark"><Link to={`/checkout/${id}`}>Get Premium Access</Link></Button>
+               <Button className='px-2 fw-bold mb-2 ' variant="outline-info"><Link className='text-decoration-none text-dark' to={`/checkout/${id}`}>Get Premium Access</Link></Button>
                 <div className='d-flex'>
                 <FaEye className='mt-2'></FaEye>
                 <p className='mt-1 px-2 fw-bold'>{total_view}</p>
