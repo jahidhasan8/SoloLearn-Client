@@ -9,7 +9,7 @@ const Courses = () => {
     const courses = useLoaderData()
 
     return (
-        <Container>
+        <Container className='mb-5'>
             <Row>
                 <Col lg="4" className='mt-5'>
                     <LeftSideNav></LeftSideNav>
@@ -20,7 +20,7 @@ const Courses = () => {
                         {
                             courses.map(course => <div key={course.id} >
                                 <div className="col">
-                                    <div className="card h-50 w-full ">
+                                    <div className="card h-50 w-full shadow rounded">
                                         <div ><img style={{ height: "300px" }}  src={course.image} className="card-img-top rounded  p-2" alt="..." /></div>
                                         <div className="card-body">
                                             <h5 className="card-title fw-bold">{course.name}</h5>

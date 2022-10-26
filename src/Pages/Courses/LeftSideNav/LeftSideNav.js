@@ -10,7 +10,7 @@ const LeftSideNav = () => {
             .then(data => setCourses(data));
     }, [])
     return (
-        <div className='mt-4'>
+        <div className='mt-4 shadow px-4 border rounded text-center py-2'>
             <h3>All Courses are :</h3>
              {
                     courses.map(course => <p key={course.id}
