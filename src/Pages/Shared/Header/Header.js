@@ -2,14 +2,12 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { SiSololearn } from "react-icons/si";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Image from 'react-bootstrap/Image'
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
-
 
 
 const Header = () => {
@@ -35,7 +33,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to={"/"}> <SiSololearn /> SoloLearn</Navbar.Brand>
+                <Navbar.Brand as={Link} to={"/"}> <Image roundedCircle style={{ height: '40px' }} src="https://i.ibb.co/Qn5T4wq/unnamed.jpg"></Image> SoloLearn</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
