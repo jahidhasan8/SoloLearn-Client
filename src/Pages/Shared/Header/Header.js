@@ -10,6 +10,7 @@ import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 
+
 const Header = () => {
 
     const { user,logOut } = useContext(AuthContext)
@@ -56,9 +57,8 @@ const Header = () => {
                         }
                         
                          {/* toggle button */}
-                        <Button onClick={handleToggle} className='ms-3' variant="outline-info">{toggle}</Button>
-
-
+                        <Button onClick={handleToggle} className='ms-3' variant="outline-info">{toggle} </Button>
+                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>

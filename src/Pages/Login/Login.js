@@ -9,7 +9,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-    const { signIn,googleAndGithubSignIn } = useContext(AuthContext);
+    const { signIn,googleAndGithubSignIn,setLoading } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const navigate=useNavigate()
@@ -31,6 +31,10 @@ const Login = () => {
                 toast.success("Successfully Login")
             })
             .catch(error => toast.error(error.message))
+            
+            .finally(()=>{
+                setLoading(false);
+               })
     }
    
     const handleGoogleSignIn = (e) => {

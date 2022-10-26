@@ -3,22 +3,24 @@ import { Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
-const PrivateRoute = ({children}) => {
+const PrivateRoute = ({ children }) => {
 
-    const {user,loading}=useContext(AuthContext)
-    const location=useLocation();
-    
-//    private route 
+    const { user, loading } = useContext(AuthContext)
+    const location = useLocation();
 
-    if(loading){
-        return <Spinner animation="border" variant="info" />
+    //    private route 
 
-      }
-    if(user){
+    if (loading) {
+        return <div className="d-flex justify-content-center">
+            <Spinner animation="border m-5" variant="info" />
+        </div>
+
+    }
+    if (user) {
         return children
     }
 
-    return <Navigate to='/login' state={{from:location}} replace></Navigate>
+    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
 };
 
 export default PrivateRoute;
