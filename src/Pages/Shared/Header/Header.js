@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { SiSololearn } from "react-icons/si";
+import { FaUserAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Image from 'react-bootstrap/Image'
@@ -49,7 +50,13 @@ const Header = () => {
                             user?.uid ?
                                 <>
                                     <Nav.Link className='me-2' onClick={handleLogout}>Logout</Nav.Link>
-                                    <Image className='mt-2' style={{ height: '30px' }} roundedCircle src={user?.photoURL} title={user?.displayName}></Image>
+                                
+                                   {user?.photoURL ?
+                                   <Image className='mt-2' style={{ height: '30px' }} roundedCircle src={user?.photoURL} title={user?.displayName}></Image>
+                                   :
+                                   <FaUserAlt className='text-light mt-3' title={user?.displayName}></FaUserAlt>
+                                    } 
+                                   
                                 </>
                                 :
                                 <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
