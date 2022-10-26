@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
@@ -12,6 +12,9 @@ const Login = () => {
     const { signIn,googleAndGithubSignIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate=useNavigate()
+    const location=useLocation();
+    const from=location.state?.from?.pathname || '/'
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,6 +27,8 @@ const Login = () => {
                 const user = result.user
                 console.log(user);
                 form.reset()
+                navigate(from,{replace:true})
+                toast.success("Successfully Login")
             })
             .catch(error => toast.error(error.message))
     }
