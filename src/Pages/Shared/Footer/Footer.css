@@ -1,0 +1,18 @@
+.footer-input {
+    padding-left: 18px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: rgb(253, 253, 253);
+    margin-right: 5px;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  .footer-container {
+    background-color: rgb(11, 11, 20);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    color: rgb(216, 209, 209);
+    
+  }
