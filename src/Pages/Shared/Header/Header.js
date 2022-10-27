@@ -12,11 +12,11 @@ import { useState } from 'react';
 
 const Header = () => {
 
-    const { user,logOut } = useContext(AuthContext)
-    const[toggle,setToggle]=useState('dark')
+    const { user, logOut } = useContext(AuthContext)
+    const [toggle, setToggle] = useState('dark')
 
-    const handleToggle=()=>{
-        if(toggle==='dark'){
+    const handleToggle = () => {
+        if (toggle === 'dark') {
             setToggle('light')
         }
         else {
@@ -24,14 +24,14 @@ const Header = () => {
         }
     }
 
-    const handleLogout=()=>{
+    const handleLogout = () => {
         logOut()
-        .then(()=>{})
-        .catch(error=>console.error(error.message))
+            .then(() => { })
+            .catch(error => console.error(error.message))
     }
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark"  variant="dark">
             <Container>
                 <Navbar.Brand as={Link} to={"/"}> <Image roundedCircle style={{ height: '40px' }} src="https://i.ibb.co/Qn5T4wq/unnamed.jpg"></Image> SoloLearn</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -48,22 +48,22 @@ const Header = () => {
                             user?.uid ?
                                 <>
                                     <Nav.Link className='me-2' onClick={handleLogout}>Logout</Nav.Link>
-                                
-                                   {user?.photoURL ?
-                                   <Image className='mt-2' style={{ height: '30px' }} roundedCircle src={user?.photoURL} title={user?.displayName}></Image>
-                                   :
-                                   <FaUserAlt className='text-light mt-3' title={user?.displayName}></FaUserAlt>
-                                    } 
-                                   
+
+                                    {user?.photoURL ?
+                                        <Image className='mt-2' style={{ height: '30px' }} roundedCircle src={user?.photoURL} title={user?.displayName}></Image>
+                                        :
+                                        <FaUserAlt className='text-light mt-3' title={user?.displayName}></FaUserAlt>
+                                    }
+
                                 </>
                                 :
                                 <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
 
                         }
-                        
-                         {/* toggle button */}
+
+                        {/* toggle button */}
                         <Button onClick={handleToggle} className='ms-3' variant="outline-info">{toggle} </Button>
-                        
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

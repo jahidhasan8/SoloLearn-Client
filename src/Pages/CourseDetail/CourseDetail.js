@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { FaDownload } from "react-icons/fa";
+import { MdDownloadForOffline } from "react-icons/md";
 import Pdf from "react-to-pdf";
 import { FaEye } from "react-icons/fa";
 
@@ -18,8 +18,8 @@ const CourseDetail = () => {
         <div className='p-5 '>
             <Card className='  mx-auto mt-5 rounded mb-5 col-md-6 shadow'>
 
-                <Card.Title className='text-center fw-bold bg-dark text-light m-0 rounded py-2 mx-2'>Welcome to {name} Course  <Pdf targetRef={ref} filename="p-Course.pdf">
-                    {({ toPdf }) => <button onClick={toPdf}><FaDownload></FaDownload></button>}
+                <Card.Title className='text-center fw-bold bg-dark text-light m-0 rounded py-2 mx-2'> {name} Course  <Pdf targetRef={ref} filename="p-Course.pdf">
+                    {({ toPdf }) => <button className='border rounded-circle' onClick={toPdf}><MdDownloadForOffline></MdDownloadForOffline></button>}
                 </Pdf>
                 </Card.Title>
 
