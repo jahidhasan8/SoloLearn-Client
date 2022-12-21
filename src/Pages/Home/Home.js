@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import CourseBanner from './component/CourseBanner';
 import Partner from './component/Partner';
 import Stats from './component/Stats';
 
@@ -50,6 +51,7 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <Stats></Stats>
+            <CourseBanner></CourseBanner>
             <Partner></Partner>
         </div>
     );
