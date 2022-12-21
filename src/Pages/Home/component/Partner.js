@@ -4,7 +4,7 @@ import "./Partner.css";
 const Partner = () => {
   return (
     <div>
-      <h2 className=" my-5 border-3 bg-dark text-white w-25 rounded text-center p-3 m-3 mx-auto">
+      <h2 className=" my-5 border-3 bg-dark text-white w-50 rounded text-center p-3 m-3 mx-auto">
         Accredited Partner
       </h2>
 
