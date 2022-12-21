@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineCheckSquare } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 const CourseBanner = () => {
     return (
         <div className='mt-5 container'>
@@ -19,6 +20,8 @@ const CourseBanner = () => {
         <p className='fs-5'><AiOutlineCheckSquare className='fs-2 text-info'/> Easy to understand language</p>
         <p className='fs-5'><AiOutlineCheckSquare className='fs-2 text-info'/> Simple and easy to learn courses</p>
         <p className='fs-5'><AiOutlineCheckSquare className='fs-2 text-info' /> Download pdf version of courses</p>
+        <Link to={"/register"}> <button className='btn btn-dark text-white fw-bold'>Start Learning Now</button></Link>
+       
     </div>
 </div>
         </div>
