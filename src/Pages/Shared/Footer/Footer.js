@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="left-container text-center">
-                <Image roundedCircle src="https://i.ibb.co/Qn5T4wq/unnamed.jpg" alt="" width="100" height="100" />
+                <Image roundedCircle src="https://i.ibb.co/Jnj1qB0/tfabydup7lujy9cgwrlz.png" alt="" width="100" height="100" />
                 <h1>SoloLearn</h1>
 
                 <p className="mt-4 ">

@@ -33,7 +33,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark"  variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to={"/"}> <Image roundedCircle style={{ height: '40px' }} src="https://i.ibb.co/Qn5T4wq/unnamed.jpg"></Image> SoloLearn</Navbar.Brand>
+                <Navbar.Brand as={Link} to={"/"}> <Image roundedCircle style={{ height: '40px' }} src="https://i.ibb.co/Jnj1qB0/tfabydup7lujy9cgwrlz.png"></Image> SoloLearn</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
